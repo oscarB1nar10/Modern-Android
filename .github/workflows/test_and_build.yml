@@ -20,7 +20,7 @@ jobs:
         run: ./gradlew tests
         ## Try to build the project
       - name: Build Project
-          run: ./gradlew assemble
+        run: ./gradlew assemble
 
   ## 4
   sonarcloud:
