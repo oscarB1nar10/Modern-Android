@@ -37,7 +37,7 @@ The app contains a couple of feature modules in charge to display the list of Ma
       
   ![image](https://user-images.githubusercontent.com/43419630/190234473-45946c3f-3a45-4918-bc0f-c29ea831042d.png)
   
-  ![image](https://user-images.githubusercontent.com/43419630/190234570-6689d78d-86fe-4448-ae02-5093f05408f2.png)
+  ![image](https://user-images.githubusercontent.com/43419630/190413984-d2a6055a-cb79-4657-bed0-31a68bec99d3.png)
   
   ![image](https://user-images.githubusercontent.com/43419630/190234886-d1544b02-9760-4166-b972-4a737cbd1af1.png)
 
