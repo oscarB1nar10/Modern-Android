@@ -14,8 +14,6 @@ object AndroidX {
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
     const val iconsExtended = "androidx.compose.material:material-icons-extended:${Compose.compose_material}"
-
-
 }
 
 object AndroidXTest {
