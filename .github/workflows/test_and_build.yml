@@ -3,7 +3,7 @@ name: Test and build
 
 ## Actions that will be executed when the code be push
 on:
-  push:
+  # Fire the job only when the PR is created
   pull_request:
     types: [ opened, synchronize, reopened ]
 
