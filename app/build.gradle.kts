@@ -16,7 +16,14 @@ android {
         versionName = Android.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        //signingConfig = signingConfigs.debug
+
+        // Specify the directory where to put the Room schema
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+
     }
 
     buildTypes {
@@ -52,6 +59,7 @@ android {
             isIncludeAndroidResources = true
         }
     }
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
