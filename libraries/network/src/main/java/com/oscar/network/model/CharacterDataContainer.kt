@@ -11,6 +11,8 @@ data class CharacterDataContainer(
     val limit: Int = 0,
     @SerializedName("count")
     val count: Int = 0,
+    @SerializedName("total")
+    val total: Int = 0,
     @SerializedName("results")
-    val characters: List<Character> = listOf(),
+    val results: List<Character> = listOf(),
 )

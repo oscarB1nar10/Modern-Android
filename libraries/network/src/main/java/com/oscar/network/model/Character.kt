@@ -12,5 +12,5 @@ data class Character(
     @SerializedName("description")
     val description: String = "",
     @SerializedName("thumbnail")
-    val image: Image,
+    val thumbnail: Image,
 )

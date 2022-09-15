@@ -12,7 +12,7 @@ data class CharacterDataWrapper(
     @SerializedName("attributionHTML")
     val attributionHTML: String,
     @SerializedName("data")
-    val characterDataContainer: CharacterDataContainer,
+    val data: CharacterDataContainer,
     @SerializedName("etag")
     val etag: String
 )
