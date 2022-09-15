@@ -3,5 +3,9 @@ apply {
 }
 
 dependencies {
-
+    // Room
+    "implementation"(Room.roomRuntime)
+    "kapt"(Room.roomCompiler)
+    "implementation"(Room.roomKtx)
+    "testImplementation"(Room.roomTesting)
 }

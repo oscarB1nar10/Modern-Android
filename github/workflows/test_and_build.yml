@@ -1,0 +1,37 @@
+## 1
+name: Test and build
+
+## Actions that will be executed when the code be push
+on:
+  push:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+
+## Jobs
+jobs:
+  ## 3
+  unit_tests:
+    run-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v1
+        ## Execute tests
+      - name: Unit tests
+        run: ./gradlew tests
+        ## Try to build the project
+      - name: Build Project
+          run: ./gradlew assemble
+
+  ## 4
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
