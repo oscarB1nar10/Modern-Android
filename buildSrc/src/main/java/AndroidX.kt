@@ -1,4 +1,5 @@
 object AndroidX {
+    private const val serializationVersion = "1.4.0"
     private const val coreKtxVersion = "1.7.0"
     const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
 
@@ -13,7 +14,10 @@ object AndroidX {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
-    const val iconsExtended = "androidx.compose.material:material-icons-extended:${Compose.compose_material}"
+    const val iconsExtended =
+        "androidx.compose.material:material-icons-extended:${Compose.compose_material}"
+    const val serialization =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
 }
 
 object AndroidXTest {
