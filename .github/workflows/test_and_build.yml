@@ -12,7 +12,7 @@ on:
 jobs:
   ## 3
   unit_tests:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
         ## Execute tests
