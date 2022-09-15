@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+        ## Make gradlew executable
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
         ## Execute tests
       - name: Unit tests
         run: ./gradlew tests
