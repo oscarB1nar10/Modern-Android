@@ -1,4 +1,5 @@
 object AndroidX {
+    private const val serializationVersion = "1.4.0"
     private const val coreKtxVersion = "1.7.0"
     const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
 
@@ -13,7 +14,10 @@ object AndroidX {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
-    const val iconsExtended = "androidx.compose.material:material-icons-extended:${Compose.compose_material}"
+    const val iconsExtended =
+        "androidx.compose.material:material-icons-extended:${Compose.compose_material}"
+    const val serialization =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
 }
 
 object AndroidXTest {
@@ -21,6 +25,8 @@ object AndroidXTest {
     private const val testCoreVersion = "1.4.0"
     private const val extJunitVersion = "1.1.3"
     private const val espressoCoreVersion = "3.4.0"
+    private const val coroutineTestVersion = "1.6.1"
+
     const val extJunit = "androidx.test.ext:junit:$extJunitVersion"
     const val espressoCore = "androidx.test.espresso:espresso-core:$espressoCoreVersion"
     const val testCore = "androidx.test:core:$testCoreVersion"
@@ -32,5 +38,6 @@ object AndroidXTest {
 
     // Needed for createComposeRule, but not createAndroidComposeRule:
     const val testManifest = "androidx.compose.ui:ui-test-manifest:${Compose.compose_ui}"
+    const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineTestVersion"
 
 }

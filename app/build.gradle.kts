@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id ("kotlinx-serialization")
 }
 
 android {
@@ -117,7 +118,7 @@ dependencies {
     testImplementation(AndroidXTest.extJunit)
     testImplementation(HiltTest.hiltAndroidTesting)
     testImplementation(AndroidXTest.testCore)
-    testImplementation(CoroutineTest.coroutineTest)
+    testImplementation(AndroidXTest.coroutineTest)
     testImplementation(AndroidXTest.testRules)
     testImplementation(AndroidXTest.testRunner)
 
