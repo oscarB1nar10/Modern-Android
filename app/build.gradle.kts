@@ -131,4 +131,7 @@ dependencies {
 
     // Gson (Mapper for network request)
     implementation(Gson.gson)
+
+    // Timber (Logs)
+    implementation(Timber.timber)
 }

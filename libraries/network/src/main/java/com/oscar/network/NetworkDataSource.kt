@@ -1,7 +1,7 @@
 package com.oscar.network
 
-import com.oscar.network.model.CharacterDataWrapper
+import com.oscar.network.model.NetworkCharacterDataWrapper
 
 interface NetworkDataSource {
-    suspend fun getMarvelCharacters(): CharacterDataWrapper
+    suspend fun getMarvelCharacters(): NetworkCharacterDataWrapper
 }

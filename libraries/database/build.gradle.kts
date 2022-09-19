@@ -3,6 +3,9 @@ apply {
 }
 
 dependencies {
+    // modules
+    "implementation"(project(Modules.model))
+
     // Room
     "implementation"(Room.roomRuntime)
     "kapt"(Room.roomCompiler)
