@@ -7,6 +7,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -19,7 +20,7 @@
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/comon" />
             <option value="$PROJECT_DIR$/libraries/constants" />
-            <option value="$PROJECT_DIR$/libraries/core" />
+            <option value="$PROJECT_DIR$/libraries/data" />
             <option value="$PROJECT_DIR$/libraries/database" />
             <option value="$PROJECT_DIR$/libraries/design-system" />
             <option value="$PROJECT_DIR$/libraries/model" />

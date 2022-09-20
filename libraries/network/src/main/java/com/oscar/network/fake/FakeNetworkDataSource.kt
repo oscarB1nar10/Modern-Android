@@ -1,7 +1,7 @@
 package com.oscar.network.fake
 
 import com.oscar.network.NetworkDataSource
-import com.oscar.network.model.CharacterDataWrapper
+import com.oscar.network.model.NetworkCharacterDataWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -14,7 +14,7 @@ class FakeNetworkDataSource @Inject constructor(
     private val networkJson: Json
 ) : NetworkDataSource {
 
-    override suspend fun getMarvelCharacters(): CharacterDataWrapper =
+    override suspend fun getMarvelCharacters(): NetworkCharacterDataWrapper =
         withContext(ioDispatcher) {
             networkJson.decodeFromString(FakeDataSource.marvelCharacters)
         }

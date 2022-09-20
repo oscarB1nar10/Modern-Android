@@ -1,6 +1,6 @@
 package com.oscar.network.api
 
-import com.oscar.network.model.CharacterDataWrapper
+import com.oscar.network.model.NetworkCharacterDataWrapper
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -10,8 +10,8 @@ import retrofit2.http.Query
 interface MarvelCharacterApi {
 
     @GET(value = "/v1/public/characters")
-    suspend fun getTopics(
+    suspend fun getCharacters(
         @Query("limit") limit: Int,
         @Query("offset") offset: Int,
-    ): CharacterDataWrapper
+    ): NetworkCharacterDataWrapper
 }

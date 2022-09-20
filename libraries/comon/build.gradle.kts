@@ -3,5 +3,11 @@ apply {
 }
 
 dependencies {
+    // Modules
+    "implementation"(project(Modules.constants))
 
+    // Retrofit (For network request)
+    "implementation"(Retrofit.retrofit)
+    "implementation"(Retrofit.retrofitConverter)
+    "implementation"(Retrofit.retrofitScalarConverter)
 }

@@ -4,12 +4,15 @@
     <bytecodeTargetLevel target="1.7">
       <module name="OpenBank.app" target="11" />
       <module name="OpenBank.buildSrc" target="11" />
+      <module name="Openbank.buildSrc" target="11" />
+      <module name="Openbank.buildSrc.main" target="11" />
       <module name="OpenBank.buildSrc.main" target="11" />
+      <module name="Openbank.buildSrc.test" target="11" />
       <module name="OpenBank.buildSrc.test" target="11" />
       <module name="OpenBank.features.hero-detail" target="11" />
       <module name="OpenBank.features.hero-list" target="11" />
       <module name="OpenBank.libraries.comon" target="11" />
-      <module name="OpenBank.libraries.core" target="11" />
+      <module name="OpenBank.libraries.data" target="11" />
       <module name="OpenBank.libraries.database" target="11" />
       <module name="OpenBank.libraries.design-system" target="11" />
       <module name="OpenBank.libraries.navigation" target="11" />
