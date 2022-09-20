@@ -25,7 +25,7 @@ object AndroidXTest {
     private const val testCoreVersion = "1.4.0"
     private const val extJunitVersion = "1.1.3"
     private const val espressoCoreVersion = "3.4.0"
-    private const val coroutineTestVersion = "1.6.1"
+    private const val coroutineTestVersion = "1.6.3"
 
     const val extJunit = "androidx.test.ext:junit:$extJunitVersion"
     const val espressoCore = "androidx.test.espresso:espresso-core:$espressoCoreVersion"
