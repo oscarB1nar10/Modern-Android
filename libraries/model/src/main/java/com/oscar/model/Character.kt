@@ -6,5 +6,5 @@ data class Character(
     val name: String = "",
     val description: String = "",
     val image: String = "",
-    val pagination: Pagination
+    val pagination: Pagination = Pagination()
 )

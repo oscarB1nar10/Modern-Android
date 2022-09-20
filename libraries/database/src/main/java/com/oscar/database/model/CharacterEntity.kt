@@ -15,19 +15,19 @@ data class CharacterEntity(
     @PrimaryKey
     val id: Int = -1,
     @ColumnInfo(name = "description")
-    val description: String,
+    val description: String = "",
     @ColumnInfo(name = "name")
-    val name: String,
+    val name: String = "",
     @ColumnInfo(name = "image")
-    val image: String,
+    val image: String = "",
     @ColumnInfo(name = "count")
-    val count: Int,
+    val count: Int = 0,
     @ColumnInfo(name = "limit")
-    val limit: Int,
+    val limit: Int = 0,
     @ColumnInfo(name = "offset")
-    val offset: Int,
+    val offset: Int = 0,
     @ColumnInfo(name = "total")
-    val total: Int
+    val total: Int = 0
 )
 
 fun CharacterEntity.asDomainModel() = Character(
@@ -42,21 +42,3 @@ fun CharacterEntity.asDomainModel() = Character(
         total = total
     )
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

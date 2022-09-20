@@ -20,6 +20,7 @@ fun NetworkCharacterDataContainer.asCharacters(): List<CharacterEntity> {
 }
 
 fun NetworkCharacter.asEntity(pagination: Pagination) = CharacterEntity(
+    id = id,
     description = description,
     name = name,
     image = thumbnail.path,

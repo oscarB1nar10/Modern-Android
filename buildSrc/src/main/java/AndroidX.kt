@@ -32,11 +32,7 @@ object AndroidXTest {
     const val testCore = "androidx.test:core:$testCoreVersion"
     const val testRules = "androidx.test:rules:$testCoreVersion"
     const val testRunner = "androidx.test:runner:$testCoreVersion"
-
-    // Test rules and transitive dependencies:
     const val testJunit = "androidx.compose.ui:ui-test-junit4:${Compose.compose_ui}"
-
-    // Needed for createComposeRule, but not createAndroidComposeRule:
     const val testManifest = "androidx.compose.ui:ui-test-manifest:${Compose.compose_ui}"
     const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineTestVersion"
 

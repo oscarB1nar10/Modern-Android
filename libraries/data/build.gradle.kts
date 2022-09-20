@@ -8,4 +8,13 @@ dependencies {
     "implementation"(project(Modules.network))
     "implementation"(project(Modules.comon))
     "implementation"(project(Modules.model))
+
+    // Room
+    "implementation"(Room.roomRuntime)
+    "kapt"(Room.roomCompiler)
+    "implementation"(Room.roomKtx)
+    "testImplementation"(Room.roomTesting)
+
+    // Serialization
+    "implementation"(AndroidX.serialization)
 }

@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
@@ -8,7 +8,6 @@ android {
     compileSdk = Android.compileSdk
 
     defaultConfig {
-        applicationId = Android.applicationId
         minSdk = Android.minSdk
         targetSdk = Android.targetSdk
         versionCode = Android.versionCode

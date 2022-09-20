@@ -6,7 +6,7 @@ import com.oscar.data.mappers.asCharacters
 import com.oscar.database.dao.CharacterDao
 import com.oscar.database.model.asDomainModel
 import com.oscar.model.Character
-import com.oscar.network.fake.FakeNetworkDataSource
+import com.oscar.network.NetworkDataSource
 import com.oscar.network.util.NetworkHandler
 import javax.inject.Inject
 
@@ -15,7 +15,7 @@ class MarvelCharactersRepositoryImpl
 constructor(
     private val networkHandler: NetworkHandler,
     private val characterDao: CharacterDao,
-    private val networkDataSource: FakeNetworkDataSource
+    private val networkDataSource: NetworkDataSource
 ) : MarvelCharactersRepository {
 
     override suspend fun getCharacters(listOffset: Int): Result<List<Character>> {
@@ -34,6 +34,17 @@ constructor(
         } catch (e: Exception) {
             val errorModel = ErrorHandling.handleError(e)
             return Result.Error(errorModel)
+        }
+    }
+
+    override suspend fun getCharacterById(characterId: Int): Result<Character> {
+        return try {
+            // Fetch from local db only
+            val characterEntity = characterDao.getCharacterById(characterId)
+            Result.Success(characterEntity.asDomainModel())
+        } catch (e: Exception) {
+            val errorModel = ErrorHandling.handleError(e)
+            Result.Error(errorModel)
         }
     }
 
