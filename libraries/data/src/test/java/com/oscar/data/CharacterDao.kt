@@ -2,12 +2,14 @@ package com.oscar.data
 
 import com.oscar.database.dao.CharacterDao
 import com.oscar.database.model.CharacterEntity
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 class TestCharacterDao : CharacterDao {
 
     private var characterEntityList = mutableListOf<CharacterEntity>()
 
-    override fun getCharacterById(characterId: Int): CharacterEntity {
+    override suspend fun getCharacterById(characterId: Int): CharacterEntity {
         val characterEntity = characterEntityList.firstOrNull { characterEntity ->
             characterEntity.id == characterId
         }
@@ -15,13 +17,14 @@ class TestCharacterDao : CharacterDao {
         return characterEntity ?: CharacterEntity()
     }
 
-    override fun getCharacters(): List<CharacterEntity> {
-        return characterEntityList
+    override fun getCharacters(): Flow<List<CharacterEntity>> = flow {
+        emit(characterEntityList)
     }
 
-    override fun insertCharacters(characters: List<CharacterEntity>): List<Long> {
+    override suspend fun insertCharacters(characters: List<CharacterEntity>): List<Long> {
         characterEntityList.addAll(characters)
         // Assume no conflicts on insert
         return characters.map { it.id.toLong() }
     }
+
 }

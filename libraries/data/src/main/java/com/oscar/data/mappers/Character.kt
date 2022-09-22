@@ -14,18 +14,24 @@ fun NetworkCharacterDataContainer.asCharacters(): List<CharacterEntity> {
         total = total
     )
 
-    return this.results.map { networkCharacter ->
+    val entities = this.results.map { networkCharacter ->
         networkCharacter.asEntity(pagination)
     }
+
+    return entities
 }
 
 fun NetworkCharacter.asEntity(pagination: Pagination) = CharacterEntity(
     id = id,
     description = description,
     name = name,
-    image = thumbnail.path,
+    image = "${replaceHttpByHttps(thumbnail.path)}.${thumbnail.extension}",
     count = pagination.count,
     limit = pagination.limit,
     offset = pagination.offset,
     total = pagination.total
 )
+
+fun replaceHttpByHttps(originalPath: String): String {
+    return originalPath.replace("http", "https")
+}

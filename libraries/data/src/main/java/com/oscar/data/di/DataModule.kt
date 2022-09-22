@@ -1,7 +1,7 @@
 package com.oscar.data.di
 
-import com.oscar.data.repository.MarvelCharactersRepository
-import com.oscar.data.repository.MarvelCharactersRepositoryImpl
+import com.oscar.data.repository.CharactersRepository
+import com.oscar.data.repository.CharactersRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,6 +13,6 @@ interface DataModule {
 
     @Binds
     fun bindsMarvelCharactersRepository(
-        marvelCharactersRepository: MarvelCharactersRepositoryImpl
-    ): MarvelCharactersRepository
+        marvelCharactersRepository: CharactersRepositoryImpl
+    ): CharactersRepository
 }
