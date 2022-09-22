@@ -26,8 +26,7 @@ The app contains a couple of feature modules in charge to display the list of Ma
 * [Room Database](https://developer.android.com/training/data-storage/room)
 * Dependency injection with [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 * [Jetpack ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
-* UI using [Jetpack Compose](https://developer.android.com/jetpack/compose) and
-[Material3](https://developer.android.com/jetpack/androidx/releases/compose-material3)
+* UI using [Jetpack Compose](https://developer.android.com/jetpack/compose)
 * [Jetpack Navigation](https://developer.android.com/jetpack/compose/navigation)
 * [Reactive data layer](https://developer.android.com/topic/architecture/data-layer)
 * [Kotlin Coroutines and Flow](https://developer.android.com/kotlin/coroutines)
@@ -41,6 +40,14 @@ The app contains a couple of feature modules in charge to display the list of Ma
   
   ![image](https://user-images.githubusercontent.com/43419630/190234886-d1544b02-9760-4166-b972-4a737cbd1af1.png)
 
+      
+## 📱 Overview
+      
+   ![characters](https://user-images.githubusercontent.com/43419630/191861285-53cad8e6-9cd1-47a2-8a92-74f160cb977e.png)
+      
+   ![characters_filter](https://user-images.githubusercontent.com/43419630/191861333-748c57c2-813a-4dc8-9d25-4ab4d9145f6f.png)
+      
+   ![character_detail](https://user-images.githubusercontent.com/43419630/191861376-992f5cdd-d867-480d-b442-8249d6a47c1c.png)
 
 ## Usage
 
