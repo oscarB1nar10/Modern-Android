@@ -14,7 +14,7 @@ class FakeNetworkDataSource @Inject constructor(
     private val networkJson: Json
 ) : NetworkDataSource {
 
-    override suspend fun getMarvelCharacters(): NetworkCharacterDataWrapper =
+    override suspend fun getCharacters(offset: Int): NetworkCharacterDataWrapper =
         withContext(ioDispatcher) {
             networkJson.decodeFromString(FakeDataSource.marvelCharacters)
         }

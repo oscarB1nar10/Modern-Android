@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
-    id ("kotlinx-serialization")
+    id("kotlinx-serialization")
 }
 
 android {
@@ -17,6 +17,7 @@ android {
         versionName = Android.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig = signingConfigs.getByName("debug")
 
         // Specify the directory where to put the Room schema
         kapt {
@@ -31,8 +32,9 @@ android {
         getByName("debug") {
             isMinifyEnabled = false
             isDebuggable = true
-            buildConfigField("String", "BASE_API_URL", "\"https://dev.pacomax.mx\"")
-            buildConfigField("String", "BASE_WEB_URL", "\"https://pacomax.com\"")
+            buildConfigField("String", "BASE_API_URL", "\"https://gateway.marvel.com:443\"")
+            buildConfigField("String", "PUBLIC_API_KEY", "\"c303d37dd6254c9f12f02dcbd5102165\"")
+            buildConfigField("String", "PRIVATE_API_KEY", "\"26121b5a8849ac897ace8d33a66a6f731ff7a93a\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -45,7 +47,8 @@ android {
             isMinifyEnabled = false
             isDebuggable = true
             buildConfigField("String", "BASE_API_URL", "\"http://localhost:8080\"")
-            buildConfigField("String", "BASE_WEB_URL", "\"http://localhost:8080\"")
+            buildConfigField("String", "PUBLIC_API_KEY", "\"abcde\"")
+            buildConfigField("String", "PRIVATE_API_KEY", "\"abcde\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -88,6 +91,9 @@ android {
 
 dependencies {
     // Import modules
+    implementation(project(Modules.design_system))
+    implementation(project(Modules.navigation))
+    implementation(project(Modules.hero_list))
 
     // Import libraries
     implementation(AndroidX.coreKtx)
@@ -134,4 +140,5 @@ dependencies {
 
     // Timber (Logs)
     implementation(Timber.timber)
+
 }

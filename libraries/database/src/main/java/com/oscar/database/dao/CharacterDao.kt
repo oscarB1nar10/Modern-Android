@@ -1,25 +1,21 @@
 package com.oscar.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Transaction
+import androidx.room.*
 import com.oscar.database.model.CharacterEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CharacterDao {
 
-    @Transaction
     @Query("SELECT * FROM character WHERE id = :characterId")
-    fun getCharacterById(characterId: Int): CharacterEntity
+    suspend fun getCharacterById(characterId: Int): CharacterEntity
 
     @Query("SELECT * FROM character")
-    fun getCharacters(): List<CharacterEntity>
+    fun getCharacters(): Flow<List<CharacterEntity>>
 
     /**
      * Inserts [characters] into the db if they don't exist, and ignores those that do
      */
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertCharacters(characters: List<CharacterEntity>): List<Long>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCharacters(characters: List<CharacterEntity>): List<Long>
 }

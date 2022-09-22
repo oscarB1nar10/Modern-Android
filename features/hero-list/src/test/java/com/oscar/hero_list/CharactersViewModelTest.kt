@@ -1,7 +1,6 @@
 package com.oscar.hero_list
 
-import com.oscar.hero_list.ui_state.getCharacters
-import com.oscar.testing.TestMarvelCharactersRepository
+import com.oscar.testing.TestCharactersRepository
 import com.oscar.testing.util.MainDispatcherRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -16,7 +15,7 @@ class CharactersViewModelTest {
     @get:Rule
     val dispatcherRule = MainDispatcherRule()
 
-    private val charactersRepository = TestMarvelCharactersRepository()
+    private val charactersRepository = TestCharactersRepository()
     private lateinit var charactersViewModel: CharactersViewModel
 
     @Before
@@ -28,8 +27,8 @@ class CharactersViewModelTest {
 
     @Test
     fun testGetCharacters() = runTest {
-        charactersViewModel.getCharacters()
-        val characters = charactersViewModel.uiState.value.getCharacters()
+        charactersViewModel.onGetCharacters()
+        val characters = charactersViewModel.uiState.value.characters
         assertEquals(2, characters.size)
 
         // Assert first character name

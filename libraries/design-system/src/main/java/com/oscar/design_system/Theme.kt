@@ -53,7 +53,7 @@ fun OpenBankTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colors = if (darkTheme) LightThemeColors else DarkThemeColors,
+        colors = if (darkTheme) DarkThemeColors else LightThemeColors,
         typography = OpenBankTypography,
         shapes = OpenBankShapes,
         content = content

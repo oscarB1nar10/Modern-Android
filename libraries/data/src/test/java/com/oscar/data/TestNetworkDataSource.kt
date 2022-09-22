@@ -13,7 +13,7 @@ class TestNetworkDataSource : NetworkDataSource {
     private val networkCharacterDataWrapper =
         networkJson.decodeFromString<NetworkCharacterDataWrapper>(FakeDataSource.marvelCharacters)
 
-    override suspend fun getMarvelCharacters(): NetworkCharacterDataWrapper {
+    override suspend fun getCharacters(offset: Int): NetworkCharacterDataWrapper {
         return networkCharacterDataWrapper
     }
 }

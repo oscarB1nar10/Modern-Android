@@ -3,5 +3,6 @@ apply {
 }
 
 dependencies {
-
+    // modules
+    "implementation"(project(Modules.constants))
 }

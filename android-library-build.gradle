@@ -30,8 +30,9 @@ android {
         debug {
             minifyEnabled = false
             debuggable = true
-            buildConfigField("String", "BASE_API_URL", "\"https://dev.pacomax.mx\"")
-            buildConfigField("String", "BASE_WEB_URL", "\"https://pacomax.com\"")
+            buildConfigField("String", "BASE_API_URL", "\"https://gateway.marvel.com:443\"")
+            buildConfigField("String", "PUBLIC_API_KEY", "\"c303d37dd6254c9f12f02dcbd5102165\"")
+            buildConfigField("String", "PRIVATE_API_KEY", "\"26121b5a8849ac897ace8d33a66a6f731ff7a93a\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
 
@@ -42,7 +43,8 @@ android {
             minifyEnabled = false
             debuggable = true
             buildConfigField("String", "BASE_API_URL", "\"http://localhost:8080\"")
-            buildConfigField("String", "BASE_WEB_URL", "\"http://localhost:8080\"")
+            buildConfigField("String", "PUBLIC_API_KEY", "\"abcde\"")
+            buildConfigField("String", "PRIVATE_API_KEY", "\"abcd\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             signingConfig = signingConfigs.getByName("debug")

@@ -3,51 +3,87 @@ package com.oscar.hero_list
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.oscar.comon.result.successOr
-import com.oscar.data.repository.MarvelCharactersRepository
+import com.oscar.constants.PAGINATION_DEFAULT_OFFSET
+import com.oscar.data.repository.CharactersRepository
 import com.oscar.hero_list.ui_state.CharactersScreenUiState
-import com.oscar.hero_list.ui_state.CharactersUiState
-import com.oscar.hero_list.ui_state.getOffset
 import com.oscar.model.Character
+import com.oscar.model.Pagination
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class CharactersViewModel @Inject constructor(
-    private val charactersRepository: MarvelCharactersRepository
+    private val charactersRepository: CharactersRepository
 ) : ViewModel() {
 
     // UI state exposed to the UI
     private val _uiState = MutableStateFlow(CharactersScreenUiState())
     val uiState: StateFlow<CharactersScreenUiState> = _uiState.asStateFlow()
 
-    fun getCharacters() {
+    init {
+        onGetCharacters()
+    }
+
+    fun onGetCharacters(pagination: Pagination = Pagination()) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
 
-            val charactersResult = charactersRepository.getCharacters(
-                _uiState.value.charactersUiState.offset
-            )
-
-            val characters = charactersResult.successOr(listOf())
-            updateUiState(characters)
+            charactersRepository.getCharacters(pagination).collect { result ->
+                val characters = result.successOr(listOf())
+                updateCharacters(characters)
+            }
         }
     }
 
-    private fun updateUiState(characters: List<Character>) {
-        val incomingOffset = characters.firstOrNull()?.pagination?.limit ?: 0
-        val currentOffset = _uiState.value.getOffset()
+    fun onExecuteSearch() {
+        val characterName = _uiState.value.characterName
+
+        _uiState.update { it.copy(isLoading = true) }
+
+        val filteredCharacters = _uiState.value.characters.filter { character ->
+            character.name.lowercase().contains(characterName.lowercase())
+        }
+
+        _uiState.update {
+            it.copy(
+                filteredCharacters = filteredCharacters,
+                isLoading = false
+            )
+        }
+    }
+
+    fun onLoadMoreCharacters(currentScrollPosition: Int) {
+        val numOfCharactersDisplayed = _uiState.value.count
+        val pageNumber = _uiState.value.pageNumber
+        val totalNumOfCharacters = _uiState.value.total
+        val newOffset = pageNumber * PAGINATION_DEFAULT_OFFSET
+
+        // Prevent duplicate events due to recompose happening to quickly
+        if (currentScrollPosition >= (numOfCharactersDisplayed - 1)) {
+            // Fetch new characters if there are still available
+            if (newOffset < totalNumOfCharacters) {
+                onGetCharacters(Pagination(offset = newOffset))
+            }
+        }
+    }
+
+    fun updateCharacterName(characterName: String) {
+        _uiState.update { it.copy(characterName = characterName) }
+    }
+
+    private fun updateCharacters(characters: List<Character>) {
+        val totalOfCharacters = characters.firstOrNull()?.pagination?.total ?: 0
+        val currentPageNumber = _uiState.value.pageNumber
 
         _uiState.update { charactersScreenUiState ->
             charactersScreenUiState.copy(
-                charactersUiState = CharactersUiState(
-                    characters = characters,
-                    offset = currentOffset + incomingOffset
-                ),
+                characters = characters,
+                filteredCharacters = characters,
+                pageNumber = currentPageNumber + 1,
+                total = totalOfCharacters,
+                count = characters.size,
                 isLoading = false
             )
         }

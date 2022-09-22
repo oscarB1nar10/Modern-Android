@@ -26,13 +26,13 @@ class FakeNetworkDataSourceTest {
 
     @Test
     fun testNumOfCharacters() = runTest(testDispatcher) {
-        val numOfCharacters = subject.getMarvelCharacters().data.results.size
+        val numOfCharacters = subject.getCharacters(0).data.results.size
         assertEquals(4, numOfCharacters)
     }
 
     @Test
     fun testFirstCharacter() = runTest(testDispatcher) {
-        val character = subject.getMarvelCharacters().data.results.firstOrNull()
+        val character = subject.getCharacters(0).data.results.firstOrNull()
         assertEquals("3-D Man", character?.name)
     }
 

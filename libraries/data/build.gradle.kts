@@ -8,6 +8,7 @@ dependencies {
     "implementation"(project(Modules.network))
     "implementation"(project(Modules.comon))
     "implementation"(project(Modules.model))
+    "implementation"(project(Modules.constants))
 
     // Room
     "implementation"(Room.roomRuntime)

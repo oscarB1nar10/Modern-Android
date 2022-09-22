@@ -9,7 +9,7 @@ object Compose {
     private const val compose_ui_tooling = "1.2.1"
     private const val compose_ui_tooling_preview = "1.2.1"
     private const val activity_version = "1.3.1"
-    private const val coil_version = "2.1.0"
+    private const val coil_version = "2.2.1"
 
     const val ui = "androidx.compose.ui:ui:$compose_ui"
     const val material = "androidx.compose.material:material:$compose_material"
