@@ -11,8 +11,12 @@ object CharactersDestination : OpenBankNavigationDestination {
 
 }
 
-fun NavGraphBuilder.authorGraph() {
+fun NavGraphBuilder.charactersGraph(
+    navigateToCharacterDetail: (String) -> Unit,
+) {
     composable(route = CharactersDestination.route) {
-        CharactersRoute()
+        CharactersRoute(
+            navigateToCharacterDetail
+        )
     }
 }

@@ -13,7 +13,7 @@ import com.oscar.model.Pagination
 
 data class CharacterEntity(
     @PrimaryKey
-    val id: Int = -1,
+    val characterId: Int = -1,
     @ColumnInfo(name = "description")
     val description: String = "",
     @ColumnInfo(name = "name")
@@ -31,7 +31,7 @@ data class CharacterEntity(
 )
 
 fun CharacterEntity.asDomainModel() = Character(
-    id = id,
+    id = characterId,
     name = name,
     description = description,
     image = image,

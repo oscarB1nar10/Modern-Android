@@ -27,7 +27,8 @@ constructor(
             if (networkHandler.isOnline()) {
                 // Fetch data from network
                 val charactersContainer = networkDataSource.getCharacters(pagination.offset).data
-                // Save in local db
+
+                // Save characters in local db
                 characterDao.insertCharacters(charactersContainer.asCharacters())
 
                 // Return data from local db
@@ -49,8 +50,8 @@ constructor(
     override suspend fun getCharacterById(characterId: Int): Result<Character> {
         return try {
             // Fetch from local db only
-            val characterEntity = characterDao.getCharacterById(characterId)
-            Result.Success(characterEntity.asDomainModel())
+            val character = characterDao.getCharacterById(characterId)
+            Result.Success(character.asDomainModel())
         } catch (e: Exception) {
             val errorModel = ErrorHandling.handleError(e)
             Result.Error(errorModel)

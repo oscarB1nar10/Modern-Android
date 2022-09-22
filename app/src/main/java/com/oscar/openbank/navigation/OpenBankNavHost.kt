@@ -4,8 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.oscar.hero_detail.navigation.CharacterDetailDestination
+import com.oscar.hero_detail.navigation.characterDetailGraph
 import com.oscar.hero_list.navigation.CharactersDestination
-import com.oscar.hero_list.navigation.authorGraph
+import com.oscar.hero_list.navigation.charactersGraph
+import com.oscar.navigation.OpenBankNavigationDestination
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -17,7 +20,7 @@ import com.oscar.hero_list.navigation.authorGraph
 @Composable
 fun OpenBankNavHost(
     navController: NavHostController,
-    onNavigateToDestination: (String) -> Unit,
+    onNavigateToDestination: (OpenBankNavigationDestination, String) -> Unit,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
     startDestination: String = CharactersDestination.route
@@ -27,6 +30,16 @@ fun OpenBankNavHost(
         startDestination = startDestination,
         modifier = modifier,
     ) {
-        authorGraph()
+        charactersGraph(
+            navigateToCharacterDetail = {
+                onNavigateToDestination(
+                    CharacterDetailDestination, CharacterDetailDestination.createNavigationRoute(it)
+                )
+            }
+        )
+
+        characterDetailGraph(
+            onBackClick
+        )
     }
 }

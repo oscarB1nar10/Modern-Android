@@ -1,13 +1,16 @@
 package com.oscar.database.dao
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.oscar.database.model.CharacterEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CharacterDao {
 
-    @Query("SELECT * FROM character WHERE id = :characterId")
+    @Query("SELECT * FROM character WHERE characterId = :characterId")
     suspend fun getCharacterById(characterId: Int): CharacterEntity
 
     @Query("SELECT * FROM character")

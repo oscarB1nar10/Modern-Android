@@ -51,8 +51,8 @@ class CharactersRepositoryTest {
 
         // Fetch character by id from local db
         val characterId = 1017100
-        val characterResult = marvelCharactersRepository.getCharacterById(characterId)
-        val character = characterResult.successOr(Character())
+        val charactersResult = marvelCharactersRepository.getCharacterById(characterId)
+        val character = charactersResult.successOr(Character())
         assertEquals("A-Bomb (HAS)", character.name)
     }
 }

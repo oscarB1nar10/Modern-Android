@@ -25,16 +25,16 @@ import com.oscar.model.Pagination
 
 @Composable
 fun CharactersRoute(
+    navigateToCharacterDetail: (String) -> Unit,
     viewModel: CharactersViewModel = hiltViewModel(),
 ) {
-
     val charactersScreenUiState = viewModel.uiState.collectAsState()
     CharactersScreen(
         charactersUiState = charactersScreenUiState.value,
         onLoadMoreCharacters = viewModel::onLoadMoreCharacters,
         onCharacterNameChanged = viewModel::updateCharacterName,
         onExecuteSearch = viewModel::onExecuteSearch,
-        onSelectCharacter = {}
+        onSelectCharacter = navigateToCharacterDetail
     )
 }
 
@@ -44,7 +44,7 @@ fun CharactersScreen(
     onLoadMoreCharacters: (Int) -> Unit,
     onCharacterNameChanged: (String) -> Unit,
     onExecuteSearch: () -> Unit,
-    onSelectCharacter: (Int) -> Unit,
+    onSelectCharacter: (String) -> Unit,
 ) {
 
     Box(

@@ -28,7 +28,7 @@ import com.oscar.model.Character
 @Composable
 fun HeroListItem(
     character: Character,
-    onSelectCharacter: (Int) -> Unit,
+    onSelectCharacter: (String) -> Unit,
 ) {
     Surface(
         modifier = Modifier
@@ -36,7 +36,7 @@ fun HeroListItem(
             .padding(bottom = 8.dp)
             .background(MaterialTheme.colors.surface)
             .clickable {
-                onSelectCharacter(character.id)
+                onSelectCharacter(character.id.toString())
             },
         elevation = 8.dp
     ) {
