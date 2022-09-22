@@ -11,7 +11,7 @@ class TestCharacterDao : CharacterDao {
 
     override suspend fun getCharacterById(characterId: Int): CharacterEntity {
         val characterEntity = characterEntityList.firstOrNull { characterEntity ->
-            characterEntity.id == characterId
+            characterEntity.characterId == characterId
         }
 
         return characterEntity ?: CharacterEntity()
@@ -24,7 +24,7 @@ class TestCharacterDao : CharacterDao {
     override suspend fun insertCharacters(characters: List<CharacterEntity>): List<Long> {
         characterEntityList.addAll(characters)
         // Assume no conflicts on insert
-        return characters.map { it.id.toLong() }
+        return characters.map { it.characterId.toLong() }
     }
 
 }

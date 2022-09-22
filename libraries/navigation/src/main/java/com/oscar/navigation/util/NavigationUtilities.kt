@@ -2,9 +2,13 @@ package com.oscar.navigation.util
 
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import com.oscar.navigation.OpenBankNavigationDestination
 
-fun NavHostController.navigateTo(screenRoute: String) {
-    this.navigate(screenRoute) {
+fun NavHostController.navigateTo(
+    destination: OpenBankNavigationDestination,
+    route: String? = null
+) {
+    this.navigate(route ?: destination.route) {
         // Pop up to the start destination of the graph to
         // avoid building up a large stack of destinations
         // on the back stack as users select items
@@ -18,6 +22,7 @@ fun NavHostController.navigateTo(screenRoute: String) {
         restoreState = true
     }
 }
+
 
 fun NavHostController.goBack() {
     this.popBackStack()

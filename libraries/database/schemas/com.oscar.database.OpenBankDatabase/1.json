@@ -2,15 +2,15 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a93ccbbbbb7b7e67a975b51c424edd9e",
+    "identityHash": "6dfec40a85a75df1be632eb19c29a64f",
     "entities": [
       {
         "tableName": "character",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `description` TEXT NOT NULL, `name` TEXT NOT NULL, `image` TEXT NOT NULL, `count` INTEGER NOT NULL, `limit` INTEGER NOT NULL, `offset` INTEGER NOT NULL, `total` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`characterId` INTEGER NOT NULL, `description` TEXT NOT NULL, `name` TEXT NOT NULL, `image` TEXT NOT NULL, `count` INTEGER NOT NULL, `limit` INTEGER NOT NULL, `offset` INTEGER NOT NULL, `total` INTEGER NOT NULL, PRIMARY KEY(`characterId`))",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
+            "fieldPath": "characterId",
+            "columnName": "characterId",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -59,7 +59,7 @@
         ],
         "primaryKey": {
           "columnNames": [
-            "id"
+            "characterId"
           ],
           "autoGenerate": false
         },
@@ -70,7 +70,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a93ccbbbbb7b7e67a975b51c424edd9e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6dfec40a85a75df1be632eb19c29a64f')"
     ]
   }
 }

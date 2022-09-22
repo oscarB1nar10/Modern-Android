@@ -108,7 +108,9 @@ dependencies {
     // Import modules
     implementation(project(Modules.design_system))
     implementation(project(Modules.navigation))
+    // Features
     implementation(project(Modules.hero_list))
+    implementation(project(Modules.hero_detail))
 
     // Import libraries
     implementation(AndroidX.coreKtx)

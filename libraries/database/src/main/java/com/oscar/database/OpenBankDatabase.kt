@@ -7,7 +7,7 @@ import com.oscar.database.model.CharacterEntity
 
 @Database(
     entities = [
-        CharacterEntity::class,
+        CharacterEntity::class
     ],
     version = 1,
     exportSchema = true
