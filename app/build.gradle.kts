@@ -19,10 +19,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         signingConfig = signingConfigs.getByName("debug")
 
-        buildConfigField("String", "BASE_API_URL", "\"http://localhost:8080\"")
-        buildConfigField("String", "PUBLIC_API_KEY", "\"abcde\"")
-        buildConfigField("String", "PRIVATE_API_KEY", "\"abcd\"")
-
         // Specify the directory where to put the Room schema
         kapt {
             arguments {

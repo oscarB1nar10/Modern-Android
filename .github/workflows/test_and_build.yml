@@ -18,12 +18,12 @@ jobs:
         ## Make gradlew executable
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-        ## Execute tests
+        ## Execute tests in debug build variant
       - name: Unit tests
-        run: ./gradlew test
+        run: ./gradlew testDebugUnitTest
         ## Try to build the project
       - name: Build Project
-        run: ./gradlew assemble
+        run: ./gradlew assembleDebug
 
   ## 4
   sonarcloud:
