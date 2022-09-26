@@ -23,7 +23,7 @@ jobs:
         run: ./gradlew testDebugUnitTest
         ## Try to build the project
       - name: Build Project
-        run: ./gradlew assemble
+        run: ./gradlew assembleDebug
 
   ## 4
   sonarcloud:
