@@ -1,7 +1,7 @@
-Open bank project as part of the interview
+Modern-Android project as part of integrate modern and cool Android libraries.
 ==================
 
-✅ **What it is**: An interview project collecting a couple of features related to Marvel super heroes [Marvel super heroes API](https://developer.marvel.com/docs) based on a layered architecture.
+✅ **What it is**: An open source project where to check the implementation of the last tendency libraries in the Android World. This app has a couple of features related to Marvel super heroes [Marvel super heroes API](https://developer.marvel.com/docs) based on a layered architecture.
 
 🙅 **What it's not**: This is not an app to be loaded to Google Play Store.
 
