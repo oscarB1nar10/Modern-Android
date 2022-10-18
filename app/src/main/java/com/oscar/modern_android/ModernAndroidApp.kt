@@ -1,6 +1,6 @@
-package com.oscar.openbank
+package com.oscar.modern_android
 
-import OpenBankTheme
+import ModernAndroidTheme
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -9,18 +9,18 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.oscar.navigation.util.goBack
 import com.oscar.navigation.util.navigateTo
-import com.oscar.openbank.navigation.OpenBankNavHost
+import com.oscar.modern_android.navigation.ModernAndroidNavHost
 
 @Composable
 fun OpenBankApp() {
-    OpenBankTheme {
+    ModernAndroidTheme {
         val navController = rememberNavController()
 
         Scaffold(
             contentColor = MaterialTheme.colors.onBackground,
         ) { padding ->
 
-            OpenBankNavHost(
+            ModernAndroidNavHost(
                 navController = navController,
                 onBackClick = navController::goBack,
                 onNavigateToDestination = navController::navigateTo,

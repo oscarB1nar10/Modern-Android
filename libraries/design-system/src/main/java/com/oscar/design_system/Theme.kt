@@ -9,7 +9,7 @@ import com.oscar.design_system.DarkGreen20
 import com.oscar.design_system.DarkGreenGray90
 import com.oscar.design_system.Err
 import com.oscar.design_system.OpenBankShapes
-import com.oscar.design_system.OpenBankTypography
+import com.oscar.design_system.ModerAndroidTypography
 import com.oscar.design_system.PrimaryColor
 import com.oscar.design_system.PrimaryVariant
 import com.oscar.design_system.SecondaryColor
@@ -48,13 +48,13 @@ private val DarkThemeColors = darkColors(
 )
 
 @Composable
-fun OpenBankTheme(
+fun ModernAndroidTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
         colors = if (darkTheme) DarkThemeColors else LightThemeColors,
-        typography = OpenBankTypography,
+        typography = ModerAndroidTypography,
         shapes = OpenBankShapes,
         content = content
     )

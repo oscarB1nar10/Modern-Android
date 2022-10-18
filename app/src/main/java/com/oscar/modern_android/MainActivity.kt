@@ -1,4 +1,4 @@
-package com.oscar.openbank
+package com.oscar.modern_android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

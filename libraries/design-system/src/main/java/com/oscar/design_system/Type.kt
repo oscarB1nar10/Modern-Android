@@ -5,7 +5,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-internal val OpenBankTypography = Typography(
+internal val ModerAndroidTypography = Typography(
     h1 = TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = 40.sp,
