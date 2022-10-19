@@ -8,10 +8,6 @@ Modern-Android project as part of integrate modern and cool Android libraries.
 This project is compatible with the latest **stable** version of Android Studio.
 
 ## Features
-
-<table>
-  <tr>
-    <td>
       
 ### 🖼️ UI
       
@@ -53,5 +49,5 @@ The app contains a couple of feature modules in charge to display the list of Ma
 
 1. Clone the repository
 ```
-git clone https://github.com/oscarB1nar10/Openbank.git
+git clone https://github.com/oscarB1nar10/Modern-Android.git
 ```
