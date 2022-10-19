@@ -1,11 +1,11 @@
-package com.oscar.openbank
+package com.oscar.modern_android
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class OpenBankApplication : Application() {
+class ModernAndroidApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

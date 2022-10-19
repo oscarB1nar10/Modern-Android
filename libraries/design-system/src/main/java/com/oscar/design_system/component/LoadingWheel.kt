@@ -1,6 +1,6 @@
 package com.oscar.design_system.component
 
-import OpenBankTheme
+import ModernAndroidTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -32,7 +32,7 @@ fun LoadingWheel(isLoading: Boolean) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewProgressBarComponentComposable() {
-    OpenBankTheme {
+    ModernAndroidTheme {
         LoadingWheel(isLoading = true)
     }
 }

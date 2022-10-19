@@ -1,4 +1,4 @@
-package com.oscar.openbank.navigation
+package com.oscar.modern_android.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,7 +18,7 @@ import com.oscar.navigation.OpenBankNavigationDestination
  * within each route is handled using state and Back Handlers.
  */
 @Composable
-fun OpenBankNavHost(
+fun ModernAndroidNavHost(
     navController: NavHostController,
     onNavigateToDestination: (OpenBankNavigationDestination, String) -> Unit,
     onBackClick: () -> Unit,
