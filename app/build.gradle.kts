@@ -114,6 +114,7 @@ dependencies {
     implementation(AndroidX.constraintLayout)
 
     // Jetpack compose (UI)
+    implementation(platform(Compose.compose_bom))
     implementation(Compose.ui)
     implementation(Compose.material)
     implementation(Compose.toolingPreview)
@@ -140,6 +141,8 @@ dependencies {
     testImplementation(AndroidXTest.coroutineTest)
     testImplementation(AndroidXTest.testRules)
     testImplementation(AndroidXTest.testRunner)
+    testImplementation(AndroidXTest.testJunit)
+    testImplementation(Robolectric.robolectric)
 
     // Espresso test
     testImplementation(AndroidXTest.espressoCore)

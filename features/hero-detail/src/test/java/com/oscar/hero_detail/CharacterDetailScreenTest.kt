@@ -1,20 +1,31 @@
 package com.oscar.hero_detail
 
 import OpenBankTheme
-import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import com.oscar.hero_detail.ui_state.CharacterDetailScreenUiState
 import com.oscar.model.Character
 import com.oscar.model.Pagination
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.shadows.ShadowLog
 
+@RunWith(RobolectricTestRunner::class)
 class CharacterDetailScreenTest {
 
     @get:Rule
-    val composeTestRule = createAndroidComposeRule<ComponentActivity>()
+    val composeTestRule = createComposeRule()
+
+
+    @Before
+    @Throws(Exception::class)
+    fun setUp() {
+        ShadowLog.stream = System.out // Redirect Logcat to console
+    }
 
     @Test
     fun testCharacterIsDisplayed() {
@@ -22,7 +33,7 @@ class CharacterDetailScreenTest {
             OpenBankTheme {
                 CharacterDetailScreen(
                     CharacterDetailScreenUiState(
-                        character =character
+                        character = character
                     )
                 )
             }
@@ -49,5 +60,4 @@ class CharacterDetailScreenTest {
             total = total
         )
     )
-
 }

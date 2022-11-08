@@ -15,7 +15,7 @@ object AndroidX {
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
     const val iconsExtended =
-        "androidx.compose.material:material-icons-extended:${Compose.compose_material}"
+        "androidx.compose.material:material-icons-extended"
     const val serialization =
         "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
 }
@@ -32,8 +32,8 @@ object AndroidXTest {
     const val testCore = "androidx.test:core:$testCoreVersion"
     const val testRules = "androidx.test:rules:$testCoreVersion"
     const val testRunner = "androidx.test:runner:$testCoreVersion"
-    const val testJunit = "androidx.compose.ui:ui-test-junit4:${Compose.compose_ui}"
-    const val testManifest = "androidx.compose.ui:ui-test-manifest:${Compose.compose_ui}"
+    const val testJunit = "androidx.compose.ui:ui-test-junit4"
+    const val testManifest = "androidx.compose.ui:ui-test-manifest"
     const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineTestVersion"
 
 }
