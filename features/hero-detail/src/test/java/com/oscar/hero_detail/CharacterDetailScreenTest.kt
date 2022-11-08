@@ -1,6 +1,6 @@
 package com.oscar.hero_detail
 
-import OpenBankTheme
+import ModernAndroidTheme
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
@@ -30,7 +30,7 @@ class CharacterDetailScreenTest {
     @Test
     fun testCharacterIsDisplayed() {
         composeTestRule.setContent {
-            OpenBankTheme {
+            ModernAndroidTheme {
                 CharacterDetailScreen(
                     CharacterDetailScreenUiState(
                         character = character
