@@ -13,3 +13,6 @@ internal val Err = Color(0xFFFF004C)
 internal val attention = Color(0xFFFFF500)
 internal val DarkGreenGray90 = Color(0xFFE2E3DE)
 internal val DarkGreen20 = Color(0xFF223526)
+
+val Ocean4 = Color(0xff57eff5)
+val Lavender4 = Color(0xffa557f5)
