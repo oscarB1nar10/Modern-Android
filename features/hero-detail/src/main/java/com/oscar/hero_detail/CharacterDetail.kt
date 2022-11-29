@@ -10,15 +10,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import coil.request.ImageRequest
-import coil.size.Size
 import com.oscar.design_system.component.DetailImage
 import com.oscar.design_system.component.Divider
 import com.oscar.design_system.component.Header
@@ -53,12 +50,6 @@ fun CharacterDetailScreen(
     characterDetailScreenUiState: CharacterDetailScreenUiState
 ) {
     val character = characterDetailScreenUiState.character
-
-    val model = ImageRequest.Builder(LocalContext.current)
-        .data(character.image)
-        .size(Size.ORIGINAL)
-        .crossfade(true)
-        .build()
 
     Box(
         Modifier.fillMaxSize()
